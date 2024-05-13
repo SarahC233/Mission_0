@@ -1,0 +1,49 @@
+.card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  flex: 0 0 calc(28% - 20px);
+  margin: 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Increased, would make cards longer */
+}
+
+.cardFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust last value to adjust transparency (make darker or lighter) */
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the text vertically */
+}
+
+.cardFooter h3 {
+  margin-bottom: 5px; /* Reduced, bring title and subtitle closer together */
+}
+
+.cardFooter p {
+  margin-top: 5px; /* Reduced, would bring the title and subtitle closer together */
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 100%; /* This makes each card take up 100% of the container's width */
+    width: 100%; /* This makes the cards take up the full width of the screen */
+    margin: 20px 0; /* adds 20px of space on the top and bottom */
+    box-sizing: border-box; /* This includes padding and border in the element's total width and height */
+  }
+}

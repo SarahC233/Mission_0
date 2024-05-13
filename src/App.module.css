@@ -1,0 +1,101 @@
+html,
+body {
+  height: 100%;
+}
+
+.card-container {
+  padding: 0 15px; /* This adds 15px of space on the left and right - solved problem of alignment in mobile view */
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 50px;
+}
+
+.hero-text {
+  color: white;
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-left: 100px;
+  margin-bottom: 100px; /* added for better viewing on laptop, but for wide monitor a new @media view would need to be created */
+}
+
+.search-bar {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 50%;
+  height: 50px;
+  padding: 10px;
+}
+
+.search-bar button {
+  width: 150px;
+  min-height: 50px; /* 'min-height' instead of 'height' to avoid the button shrinking in desktop view */
+  padding: 10px;
+  background-color: #c7b7a3;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 120px; /*Adds padding to push the content up, making room for search bar */
+    height: 48vh;
+  }
+
+  .hero-wrapper {
+    align-items: flex-start;
+  }
+
+  .hero-text {
+    margin-left: 17%; /* adjust this value to align the text with the search bar */
+    width: 100%; /*this fixed the issue of the words wrapping onto the next line, 
+  and allowed the lorem ipsum words to space out */
+    font-size: 3em;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    max-width: 80%; /* changed from px for responsiveness */
+    min-height: 100px;
+    box-sizing: border-box; /* Before using border-box, in mobile view the button couldn't expand to the same width as the search bar. 
+    Border-box makes the browser include padding and border in the element's total width and height, freeing up space for the button 
+    as padding and border no longer increase total width */
+  }
+
+  .search-bar button {
+    margin-top: 10px; /* Add space between the search bar and the button */
+  }
+}

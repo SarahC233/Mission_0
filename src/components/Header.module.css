@@ -1,0 +1,136 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.logoImage {
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the whole area */
+  margin-right: 10px;
+}
+
+.nav {
+  display: none;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none; /* removes the underline */
+  display:inline-block;
+  padding: 10px 0;
+  line-height: 1;
+ 
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+}
+
+
+.navActive {
+  display: block;
+}
+
+
+.nav ul li button {
+  background-color: #C7B7A3; 
+  color: white; /* button text color */
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px; 
+  text-decoration: none; /* removes the underline */
+  cursor: pointer; 
+  border-radius: 5px; /* This makes the button corners rounded */
+  transition: background-color 0.3s ease; /* transition effect when button background color changes */
+line-height: 1; 
+}
+
+.nav ul li button:hover {
+  background-color:#996633;
+}
+
+
+.menuIcon {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+
+  .navActive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navActive ul {
+    list-style: none; /* removes the bullet points */
+     margin: 0; /* removes default margin */
+    text-align: center;
+  }
+
+  .navActive ul a {
+    text-decoration: none; /* Removes the underline */
+    color: black; 
+  }
+
+  .menuIcon {
+    display: block;
+    font-size: 25px; /* Change to adjust size of hamburger icon */
+  }
+
+
+  .navActive ul li button {
+    background-color: #C7B7A3; 
+    color: white; /* button text color */
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px; 
+    text-decoration: none; /* removes the underline */
+    cursor: pointer; 
+    border-radius: 5px; /* This makes the button corners rounded */
+    transition: background-color 0.3s ease; /* transition effect when button background color changes */
+    line-height: 1; 
+  }
+
+  .navActive ul li button:hover {
+    background-color:#996633;
+  }
+
+}
+
+/* Desktop view */
+@media (min-width: 601px) {
+  .nav {
+    display: flex;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none; /* removes the bullet points */
+  }
+
+  .nav ul a {
+    text-decoration: none; /* removes the underline */
+    color: black; /* changes the link color to black */
+  }
+
+  .menuIcon {
+    display: none;
+  }
+}
